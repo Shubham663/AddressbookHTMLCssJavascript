@@ -1,4 +1,3 @@
-let addressBook  = new Array();
 class ContactDetails{
     _name;
     _phoneNumber;
@@ -6,6 +5,7 @@ class ContactDetails{
     _city;
     _state;
     _zip;
+    _id;
 
     set name(name){
         this._name= name;
@@ -43,9 +43,20 @@ class ContactDetails{
     get zip(){
         return this._zip;
     }
+    set id(id){
+        this._id= id;
+    }
+    get id(){
+        return this._id;
+    }
+
+    toString(){
+        return "Name: " + this._name + ", Phone Number: " + this._phoneNumber + ", Address: " + this._address + ", City: " + this._city + ", State: " + this._state + ", Zip: " + this._zip;
+    }
 }
 
 const save= () =>{
+    let id = new Date().getTime();
     let name = document.getElementById('name').value;
     let phoneNumber = document.getElementById('number').value;
     let address = document.getElementById('address').value;
@@ -59,8 +70,10 @@ const save= () =>{
     contact.city= city;
     contact.state= state;
     contact.zip = zipCode;
-    addressBook.push(contact);
-    console.log(addressBook);
+    contact.id = id;
+    writeToLocal(contact);
+    reset();
+    window.location.replace('./AddressBookHomePage.html')
 }
 
 const reset  =() => {
@@ -71,3 +84,44 @@ const reset  =() => {
     document.getElementById('state').value= '';
     document.getElementById('zip').value='';
 };
+
+const writeToLocal = (contact) => {
+    let addressBook = JSON.parse(localStorage.getItem('AddressBook'));
+    if(addressBook == undefined)
+        addressBook = [contact];
+    else{
+        addressBook.push(contact);
+    }
+    alert(contact.toString());
+    localStorage.setItem('AddressBook',JSON.stringify(addressBook));
+};
+
+window.addEventListener('DOMContentLoaded',(event) => {
+    checkForUpdates();
+});
+
+let isUpdate = false;
+let contact = {};
+
+const checkForUpdates = () => {
+    const contactJSON = localStorage.getItem('editContact');
+    isUpdate = contactJSON ? true:false;
+    if(!isUpdate) return;
+    localStorage.removeItem('editContact')
+    contact = JSON.parse(contactJSON);
+    setForm();
+};
+
+const setForm = () => {
+    setValue('#name',contact._name);
+    setValue('#number',contact._phoneNumber);
+    setValue('#address',contact._address);
+    setValue('#city',contact._city);
+    setValue('#state',contact._state);
+    setValue('#zip',contact._zip);
+};
+
+const setValue = (id,value) => {
+    const element = document.querySelector(id);
+    element.value = value;
+}
