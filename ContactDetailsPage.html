@@ -1,0 +1,72 @@
+<html lang="en">
+    <head>
+        <title>Person Address Form</title>
+        <link rel="stylesheet" href="contactdetails.css">
+        <script type="text/javascript" src="contactDetails.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="header-content">
+                <img id="icon" src="assets/icon/addressbook.png" alt="addressbook image">
+                <div class="icon-text">
+                    <div class="address">address</div>
+                    <div class="book">book</div>
+                </div>
+            </div>
+        </header>
+        <div class="form-wrapper">
+            <form class="form">
+                <div class="form-header">
+                    <div class="form-header-text">person address form</div>
+                    <a href="AddressBookHomePage.html">
+                        <img src="assets/icon/closeAddPage.svg" class="close-image" alt="Close icon">&nbsp;
+                    </a>
+                </div>
+                <div class="row-content">
+                    <label for="name" class="text">Full Name</label>
+                    <input id="name" type="text" placeholder="Enter your name">
+                </div>
+                <div class="row-content">
+                    <label for="number" class="text">Phone Number</label>
+                    <input type="number" id="number">
+                </div>
+                <div class="row-content">
+                    <label for="address" class="text">Address</label>
+                    <textarea id="address"></textarea>
+                </div>
+                <div class="row-content row">
+                    <div class="row-column">
+                        <label for="city" class="text">City</label>
+                        <select id="city">
+                            <option value="Select City" selected disabled hidden>Select City</option>
+                            <option value="Karnal">Karnal</option>
+                            <option value="Gurugram">Gurugram</option>
+                            <option value="Panipat">Panipat</option>
+                            <option value="Kurukshetra">Kurukshetra</option>
+                            <option value="Sonepat">Sonepat</option>
+                            <option value="Ambala">Ambala</option>
+                            <option value="Rohtak">Rohtak</option>
+                            <option value="Bhiwani">Bhiwani</option>
+                        </select>
+                    </div>
+                    <div class="row-column">
+                        <label for="state" class="text">State</label>
+                        <select id="state">
+                            <option value="Select City" selected disabled hidden>Select State</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Delhi">Delhi</option>
+                        </select>
+                    </div>
+                    <div class="row-column">
+                        <label for="zip-code" class="text">Zip Code</label>
+                        <input type="number" id="zip">
+                    </div>
+                </div>
+                <div class="row-content row right">
+                    <button class="button" type="button" onclick="save();">Add</button>
+                    <button class="button" type="reset" onclick="reset();">Reset</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

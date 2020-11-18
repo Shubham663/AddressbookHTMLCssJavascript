@@ -1,0 +1,29 @@
+.body-header{
+    justify-content: space-between;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: row;
+}
+.add-contact-button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 2px 5px;
+    padding-right: 10px;
+    background-color: #008cff;
+    color: white;
+}
+
+.table-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.table{
+    margin-top: 20px;
+    background-color: grey;
+    border-color: black;
+    border-width: 1;
+}

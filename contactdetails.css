@@ -1,0 +1,134 @@
+.header-content{
+    padding: 15px 105px 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#icon{
+    width:3%;
+}
+
+.icon-text{
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    font-family: Montserrat;
+    font-weight: bold;
+}
+
+.address{
+    text-transform: uppercase;
+    color: #008cff;
+}
+
+.book{
+    text-transform: uppercase;
+    color: #42515f;
+}
+
+.form-wrapper{
+    background-color: #F7F7F7;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.form{
+    padding-top: 0px;
+    width: 60%;
+    flex-direction: column;
+    background-color: white;
+}
+
+.form-header{
+    display: flex;
+    flex-direction: row;
+    height: 15%;
+}
+
+.form-header-text{
+    margin-left: 5%;
+    width: 100%;
+    justify-content: center;
+    background-color: #008cff;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    padding: 15px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.form-header a{
+    padding-right: 15px;
+    padding-top: 15px;
+    width: 1%;
+    height: 40%;
+    background-color: #008cff;
+}
+
+.close-image{
+    border-radius: 50%;
+    height: 67%;
+    background-color: white;
+}
+
+.text{
+    font-size: 12px;
+    margin-bottom: 0px;
+}
+
+input{
+    margin-top: 5px;
+    height: 35px;
+    width: 100%;
+}
+
+select{
+    margin-top: 5px;
+}
+
+
+#address{
+    margin-top: 10px;
+    height: 100px;
+    width: 100%;
+}
+
+.row-content{
+    /* padding: 5% 0 0 5% ;  */
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 20px;
+}
+
+.row-column{
+    display: flex;
+    flex-direction: column;
+    width: 27%;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#city,#state{
+    height: 35px;
+}
+
+.right{
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+.button{
+    background-color: #E2E2E2;
+    border: none;
+    padding: 10px 50px 10px 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 10px;
+}
