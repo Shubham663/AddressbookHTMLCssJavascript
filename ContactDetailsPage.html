@@ -1,12 +1,13 @@
 <html lang="en">
     <head>
+        <meta name="viewport" content="width=device-width">
         <title>Person Address Form</title>
         <link rel="stylesheet" href="contactdetails.css">
         <script type="text/javascript" src="contactDetails.js"></script>
     </head>
     <body>
         <header>
-            <div class="header-content">
+            <div class="header-content" media="all">
                 <img id="icon" src="assets/icon/addressbook.png" alt="addressbook image">
                 <div class="icon-text">
                     <div class="address">address</div>
@@ -15,16 +16,20 @@
             </div>
         </header>
         <div class="form-wrapper">
-            <form class="form">
+            <form class="form" media="all">
                 <div class="form-header">
                     <div class="form-header-text">person address form</div>
-                    <a href="AddressBookHomePage.html">
-                        <img src="assets/icon/closeAddPage.svg" class="close-image" alt="Close icon">&nbsp;
-                    </a>
+                    
+                    <img src="assets/icon/closeAddPage.svg" class="close-image" alt="Close icon" onclick="window.location.replace('AddressBookHomePage.html')">&nbsp;
+                    
                 </div>
                 <div class="row-content">
                     <label for="name" class="text">Full Name</label>
-                    <input id="name" type="text">
+                    <div class="name-error">
+                        <input id="name" type="text">
+                        <error-output class="text-error" for="text"></error-output> 
+                    </div>
+                    
                 </div>
                 <div class="row-content">
                     <label for="number" class="text">Phone Number</label>
@@ -62,7 +67,7 @@
                         <input type="number" id="zip">
                     </div>
                 </div>
-                <div class="row-content row right">
+                <div class="row button-right">
                     <button class="button" type="button" onclick="save();">Add</button>
                     <button class="button" type="reset" onclick="reset();">Reset</button>
                 </div>

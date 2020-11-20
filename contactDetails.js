@@ -8,7 +8,10 @@ class ContactDetails{
     _id;
 
     set name(name){
-        this._name= name;
+        const pattern = RegExp("[A-Z]{1}.{2,}");
+        if(pattern.test(name))
+            this._name= name;
+        else throw "The name provided is not valid";
     }
     get name(){
         return this._name;
@@ -125,3 +128,17 @@ const setValue = (id,value) => {
     const element = document.querySelector(id);
     element.value = value;
 }
+
+window.addEventListener('DOMContentLoaded',(event) =>{
+    const name = document.getElementById('name');
+    const textError = document.querySelector('.text-error');
+    name.addEventListener('input',function(){
+        try{
+            (new ContactDetails()).name = name.value;
+            textError.textContent = "";
+        }catch(e){
+            textError.textContent = e;
+        }
+    });
+    checkForUpdates();
+});
