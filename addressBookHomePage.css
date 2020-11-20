@@ -6,6 +6,8 @@ body{
     background-color: #F7F7F7;
 }
 .body-header{
+    display: flex;
+    flex-direction: row;
     font-size: large;
     margin-top: 20px;
     color: #42515F;
@@ -14,8 +16,7 @@ body{
     padding-left: 10%;
     padding-right: 10%;
     text-transform: capitalize;
-    display: flex;
-    flex-direction: row;
+    align-items: center;
 }
 .add-contact-button{
     display: flex;
@@ -36,7 +37,7 @@ body{
     width: 100%;
     border-collapse: separate;
     border-spacing: 0 15px;
-    min-width: 800px;
+    min-width: 200px;
     padding: 0 9%;
 }
 
@@ -59,4 +60,20 @@ th{
     text-transform: capitalize;
     opacity: 1;
     border: 0px solid #dddddd;
+}
+
+@media screen and (max-width:525px){
+    td,th,.table{
+        padding: 5px 2px;
+        word-break: break-all;
+    }
+    tr{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:300px){
+    tr{
+        font-size: 8px;
+    }
 }
